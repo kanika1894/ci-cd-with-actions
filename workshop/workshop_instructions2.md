@@ -18,7 +18,7 @@ At the end of the exercise we will learn -
 
 ## Deploy to Dev-Test environment
 
-For Dev-Test environment, we will be using your fork of the `ci-cd-with-actions` repo to deploy to GitHub Pages. For example - `kaverma/ci-cd-with-actions`
+For Dev-Test environment, we will be using your fork of the `ci-cd-with-actions` repo to deploy to GitHub Pages. For example - `kanika1894/ci-cd-with-actions`
 
 1. Create a new workflow file named `cd.yml` in `.github\workflows` folder. (You can also go to `Actions` tab -> `New workflow` and use `Skip this and set up a workflow yourself`, using which you will get a basic workflow template to fill in)
 2. Add the name of the workflow as "React App CD"
@@ -67,13 +67,13 @@ jobs:
       repo: ci-cd-with-actions
     steps:
       - name: Checkout 
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v2
       - name: Install and Build
         run: |
           npm install
           npm run build
       - name: Deploy 
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
@@ -84,15 +84,15 @@ jobs:
    - Go to `Settings` in your repository and click on `Pages`
    - Please ensure that you have chosen `gh-pages` branch and `/(root)` folder. Press save. The settings should like below - 
    
-   <img width="800" alt="image" src="https://user-images.githubusercontent.com/25735209/112477097-a05e1d80-8d98-11eb-9223-cf872c5c58f4.png">
-   
+   <img width="800" alt="image" src="https://user-images.githubusercontent.com/58769601/134172066-410f3e3d-e8c5-4281-943e-c8576e524ffb.png">
+
 💡 If you don't find `gh-pages`, please check that the workflow has completed successfully and recheck here post run completion.
 
 ### Checkout deployed Environments!
 
 On the repository's home page, on the right hand side you will find an `Environments` section listing down the environments. 
 
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/11780076/112488180-5464a600-8da3-11eb-90b3-db27d1b5fb74.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/58769601/134175027-0c02757e-b6bf-404d-b27a-56c8be863600.png">
 
 Click on `Dev-Test` environment and `View deployment` 🎉 You will find that your app has been deployed to the Dev-Test environment -
   
@@ -135,13 +135,13 @@ Lets go back to our `ci-cd-with-actions` repository to make changes to the CD wo
    - Check mark only `public_repo` scope.
    - Add a note in the text box provided and click `Generate token`
    
-   <img width="655" alt="image" src="https://user-images.githubusercontent.com/11780076/112490809-b6260f80-8da5-11eb-9f66-80b59d97a274.png"> 
-   
+   <img width="655" alt="image" src="https://user-images.githubusercontent.com/58769601/134175604-427d8446-5e16-4eda-a77b-67044ebc3045.png"> 
+
    Keep this tab open or copy the generated token to a safe place. This needs to used in the environment secret setting
 </details>  
 
    This is how the environment setting should look - 
-   <img width="1004" alt="image" src="https://user-images.githubusercontent.com/25735209/111995209-ad7fd000-8b3e-11eb-9eed-0d1b3d8f76b9.png">
+   <img width="1004" alt="image" src="https://user-images.githubusercontent.com/58769601/134175766-f75407bd-25cd-4b31-8528-11367a804808.png">
  
 2. Add a job to the CD workflow for deploying to the production environment
    Go to `ci-cd-with-actions` repo -> `Code` tab and open `.github/workflows/cd.yml` and edit it. Add a job to deploy to staging `deploy-production` 
@@ -171,13 +171,13 @@ Lets go back to our `ci-cd-with-actions` repository to make changes to the CD wo
       repo: actions-workshop-prod
     steps:
       - name: Checkout 
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v2
       - name: Install and Build
         run: |
           npm install
           npm run build
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with: 
           branch: gh-pages
           folder: build
@@ -191,7 +191,7 @@ Lets go back to our `ci-cd-with-actions` repository to make changes to the CD wo
 
 After you commit the above workflow to `main`, go to the Actions tab to see the workflow run for `React App CD`. NOTE, since we configured approval for deploying to production environment, you will need to click on `Review deployments` and approve  for the workflow to run. Post successful deployment, you will be able to view the deployment urls in the run. Click on the production url to view the app deployed to production.
 
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/25735209/112477659-40b44200-8d99-11eb-9bc4-5a8f1bba65c5.png">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/58769601/134176881-e9bd73a6-6c84-4278-83d3-44f8a867bf14.png">
 
 (Please check the GitHub pages setting in the `action-workshop-production` repository if you get 404 on the production environment)    
    
