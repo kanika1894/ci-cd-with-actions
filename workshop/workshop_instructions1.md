@@ -23,7 +23,7 @@ At the end of this exercise we will learn -
     - Sign in to your GitHub account from top right if not signed-in already.
     - Fork this repository into your user account (using `Fork` option on top right of the screen). This repository will get forked as `<username>/ci-cd-with-actions`
     
-    This repo contains a starter project for react.js for which we will be automating CI and CD flow. It also contains the intsructions for the workshop.
+    This repo contains a starter project for react.js for which we will be automating CI and CD flow. It also contains the instructions for the workshop.
   
 
 ## Add a CI Workflow
