@@ -1,5 +1,5 @@
 {
-  "name": kanika/ci-cd-with-actions,
+  "name": "kanika/cicdwithactions",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
