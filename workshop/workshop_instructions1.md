@@ -30,9 +30,9 @@ At the end of this exercise we will learn -
 
 1. In the forked `<username>/ci-cd-with-actions` repository, go to **Actions** tab and you will see a page to "Get started with GitHub Actions". You will find suggested starter workflows for this repository here.
 
-2. Choose **Node.js** -> "Set up this workflow"
-<img width="434" alt="image" src="https://user-images.githubusercontent.com/25735209/111957403-f9685000-8b11-11eb-98a3-b3782e813550.png">
-
+2. Choose **Node.js** -> "Configure"
+  <img width="434" alt="image" src="https://user-images.githubusercontent.com/58769601/134165198-9029eaf6-9dfe-431f-89a9-f2582e59ba8d.png">
+  
 3. You can choose to name the file as "ci.yml". The file that you are creating on `main` branch is - 
     - `.github/workflows/ci.yml`
       - This will be the workflow file taking care of building and testing your source code
@@ -51,7 +51,7 @@ At the end of this exercise we will learn -
     - Under `All workflows`, you will find your new workflow `Node.js CI.
     - Select the workflow to see the list of runs. 
     - Open the top most run that got triggered and you can click on the `Matrix: build` to see the jobs running or completed.
-    <img width="358" alt="image" src="https://user-images.githubusercontent.com/25735209/111958686-8a8bf680-8b13-11eb-8a93-f77d87558af8.png">
+    <img width="358" alt="image" src="https://user-images.githubusercontent.com/58769601/134165721-2cc1cdb7-e11f-489b-a001-f0daefbc9f63.png">
 
 ## Make changes to the CI workflow to customize for our scenario.
 
@@ -107,13 +107,12 @@ At the end of this exercise we will learn -
    - :warning: `yaml` syntax relies on indentation, please make sure that this is not changed
 
 ## Create a Pull request to add a status badge to ReadMe
-1. In the `Actions` tab, click on the `React App CI` workflow and you will find a `Create status badge` option.  ![image](https://user-images.githubusercontent.com/11780076/112483049-ac4cde00-8d9e-11eb-9959-35a4bb541bac.png)
+1. In the `Actions` tab, click on the `React App CI` workflow and you will find a `Create status badge` option.  ![image](https://user-images.githubusercontent.com/58769601/134166769-8a306f70-a037-44cf-96fb-550719ae980b.png)
 2. Click that and `Copy the status badge markdown`
 3. Edit the ReadMe file and paste this markdown on the top of the file. 
 4. Commit the readMe file by choosing to create a new branch and start a pull request. Press `Propose Change` and Open a pull request against `main` as the base branch.
 5. Go to the Pull request and :tada: and wait for the CI being run as `Checks` in PR conversation tab.
-![image](https://user-images.githubusercontent.com/25735209/112309015-d338e080-8cc8-11eb-9fbb-0946df7efbdc.png)
-
+![image](https://user-images.githubusercontent.com/58769601/134167827-963cb4ca-0714-46f3-b43e-72841d085587.png)
 6. After all the checks have passed, merge the PR, :tada: the CI status badge will be there on the repository's home page.
 ![image](https://user-images.githubusercontent.com/25735209/112309132-fbc0da80-8cc8-11eb-9461-d20709478351.png)
 
